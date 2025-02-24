@@ -32,8 +32,8 @@ Ensure you have the following installed:
 
 1. Clone the repository:
    ```sh
-   git clone https://github.com/rahulyyadav/chain.git
-   cd chat-webapp
+   git clone https://github.com/rahulyyadav/Post.git
+   cd Post
    ```
 2. Install dependencies:
    ```sh
