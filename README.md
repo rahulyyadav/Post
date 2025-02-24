@@ -1,36 +1,81 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Real-Time Chat Web App
+
+This is a real-time chat application built with **Next.js**, **AWS Lambda**, **API Gateway**, **DynamoDB**, and **WebSockets**. The project enables users to sign up, log in, and exchange messages in real time.
+
+## Features
+
+- **User Authentication**: Signup/Login with email and password.
+- **Profile Management**: Store user data including email, name, date of birth, and profile picture in AWS S3 and DynamoDB.
+- **Real-Time Messaging**: Uses WebSockets via API Gateway to provide instant messaging.
+- **Scalable Backend**: Serverless architecture powered by AWS Lambda and DynamoDB.
+- **Custom Domain Integration**: Planned for seamless deployment with Cloudflare.
+
+## Tech Stack
+
+- **Frontend**: Next.js (React Framework)
+- **Backend**: AWS Lambda, API Gateway, WebSockets
+- **Database**: AWS DynamoDB
+- **Storage**: AWS S3 (For profile pictures and assets)
+- **Authentication**: Custom authentication system
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Ensure you have the following installed:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- Node.js (Latest LTS version recommended)
+- AWS Account (for deployment)
+- AWS CLI configured with appropriate permissions
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Installation
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. Clone the repository:
+   ```sh
+   git clone https://github.com/rahulyyadav/chain.git
+   cd chat-webapp
+   ```
+2. Install dependencies:
+   ```sh
+   npm install
+   ```
+3. Start the development server:
+   ```sh
+   npm run dev
+   ```
+   Open [http://localhost:3000](http://localhost:3000) to view the app.
 
-## Learn More
+## Deployment
 
-To learn more about Next.js, take a look at the following resources:
+This project is intended to be deployed on AWS. Follow these steps:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. **Deploy Backend**:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+   - Set up API Gateway for WebSockets and HTTP requests.
+   - Deploy AWS Lambda functions for authentication and messaging.
+   - Configure DynamoDB tables for storing user and chat data.
+   - Store user profile images in an S3 bucket.
 
-## Deploy on Vercel
+2. **Deploy Frontend**:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+   - Host the Next.js frontend using Vercel or AWS Amplify.
+   - Configure the domain via Cloudflare for better security and routing.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Future Enhancements
+
+- **Message Encryption**: Secure user messages with end-to-end encryption.
+- **Group Chats**: Enable group messaging and media sharing.
+- **User Presence Status**: Show online/offline status in real time.
+- **Push Notifications**: Integrate Web Push or AWS SNS for real-time notifications.
+
+## Contributing
+
+Contributions are welcome! Feel free to fork the repository and submit a pull request with improvements or bug fixes.
+
+## Author
+
+Rahul Yadav
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
